@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Song
+comment1.params=
+comment1.target=Song()
+comment10.params=
+comment10.target=java.lang.String\ getGenre()
+comment2.params=inputName\ inputArtist\ inputDuration\ inputGenre
+comment2.target=Song(java.lang.String,\ java.lang.String,\ int,\ java.lang.String)
+comment3.params=inputName
+comment3.target=void\ setName(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ getName()
+comment5.params=inputArtist
+comment5.target=void\ setArtist(java.lang.String)
+comment6.params=
+comment6.target=java.lang.String\ getArtist()
+comment7.params=inputDuration
+comment7.target=void\ setDuration(int)
+comment8.params=
+comment8.target=java.lang.String\ getDuration()
+comment9.params=inputGenre
+comment9.target=void\ setGenre(java.lang.String)
+numComments=11
