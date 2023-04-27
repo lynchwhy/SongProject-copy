@@ -268,12 +268,12 @@ public class SongCollection
     
     // Allows user to select and delete a song from an album
     public void deleteSong(Album album) {
-        if (album1 != null) System.out.println("1. " + printAlbum(album1));
-        if (album2 != null) System.out.println("2. " + printAlbum(album2));
-        if (album3 != null) System.out.println("3. " + printAlbum(album3));
+        printAllAlbums();
         if (album1 == null && album2 == null && album3 == null) System.out.println("No albums stored");
             
             System.out.println("Which album would you like to delete song from? (enter 1, 2 or 3)");
+            int albumNumber = scanner.nextInt();
+                
             
             
 

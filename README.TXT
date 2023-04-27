@@ -11,6 +11,11 @@ HOW TO START THIS PROJECT:
 AUTHORS:
 USER INSTRUCTIONS:
 
+Files in order of execution:
+1. SongCollection.java
+2. Album.java
+3. Song.java
+
 BUGS:
 - (fixed) artist is being stored as duration in menu option 4 for some reason 
 - need to be able to take in multiple words when creating an album and song
