@@ -125,7 +125,8 @@ public class SongCollection
                 break;
             case 8:
                 //delete a song from album method
-                deleteSong(album1); //MAKE THIS USER INPUT
+
+                deleteSong();
                 break;
 
             case 9:
@@ -172,11 +173,6 @@ public class SongCollection
     }
     
     public void addSongToAlbum() {
-                // display all album names 
-                // ask user which album to add song to
-                // check if album is full
-                // allow user to set name, artist, duration and genre of new song
-                // confirm song creation
                 if (album1 != null) System.out.println("1. " + printAlbum(album1)); //NEED VALIDATION FOR ADDING SONG WHEN ALBUM IS FULL
                 if (album2 != null) System.out.println("2. " + printAlbum(album2));
                 if (album3 != null) System.out.println("3. " + printAlbum(album3));
@@ -199,17 +195,19 @@ public class SongCollection
                         System.out.println("Entre genre (\"rock\", \"pop\", \"hip-hop\" or \"bossa nova\"): ");
                         scanner.nextLine();
                         String genre = scanner.nextLine();
+                            
                             while (!genre.equals("rock") && !genre.equals("pop") && !genre.equals("hip-hop") && !genre.equals("bossa nova")) {
                                 System.out.println("Invalid genre, please enter again:");
                                 genre = scanner.nextLine();
                             }
 
                         album1.addSong(name, artist, duration, genre); // uses method from Album class to add song
-                        System.out.println("Song added to " + album1.getName());
+                        if (album1.getSong() != null) System.out.println("Song added to " + album1.getName());
                     }
                 } else if (albumNumber == 2) { // NEED TO DUPLICATE CODE FROM ABOVE OR CREATE METHOD
                 } else if (albumNumber == 3) {}
     }
+    
     // Allows user to select and delete an album
     public void deleteAlbum() {
         System.out.println("Which album would you like to delete? (1-3)");
@@ -267,16 +265,28 @@ public class SongCollection
     }
     
     // Allows user to select and delete a song from an album
-    public void deleteSong(Album album) {
+    public void deleteSong() {
         printAllAlbums();
-        if (album1 == null && album2 == null && album3 == null) System.out.println("No albums stored");
-            
+        if (album1 == null && album2 == null && album3 == null) {
+            System.out.println("No albums stored");
+        } else {
             System.out.println("Which album would you like to delete song from? (enter 1, 2 or 3)");
             int albumNumber = scanner.nextInt();
-                
-            
-            
-
+            Album album = null;
+            switch (albumNumber) {
+                case 1:
+                    album = album1;
+                    break;
+                case 2:
+                    album = album2;
+                    break;
+                case 3:
+                    album = album3;
+                    break;
+                default:
+                    System.out.println("Invalid selection. Please try again.");
+                    break;
+            }
             System.out.println("Which song would you like to delete? (1-4)");
             System.out.println(printAllSongs(album));
             int songNumber = scanner.nextInt();
@@ -300,6 +310,7 @@ public class SongCollection
                 default:
                     System.out.println("Invalid selection. Please try again.");
                     break;
+            }
         }
     }
 
@@ -346,6 +357,15 @@ public class SongCollection
             }
         }
     }
+
+    public void printAllSongsUnderDuration()
+        System.out.println("Please input max duration for song enquiry: ")
+        int songDurationInput = scanner.nextInt();
+        Album.songsUnderDuration();   
+
+
+    
+
 
 
 

@@ -28,12 +28,22 @@ public class Album
         else System.out.println("Album is full");
         
             if (totalTime + duration > MAX_TIME) {
-                System.out.println("Album is full (Cannot be > 1200 seconds)");
+                System.out.println("Album is full (Cannot be > 1200 seconds)"); //THIS VALIDATION MAY HAVE TO HAPPEN EARLIER
             } else {
                 totalTime += duration;
             }
     }
     
+    public String songsUnderDuration(int songDurationInput)    {
+        String sDuration = "";
+        if (song1.getDuration() <= songDurationInput) sDuration += song1.getName() + "\n"; 
+        if (song2.getDuration() <= songDurationInput) sDuration += song2.getName() + "\n"; 
+        if (song3.getDuration() <= songDurationInput) sDuration += song3.getName() + "\n"; 
+        if (song4.getDuration() <= songDurationInput) sDuration += song4.getName() + "\n";
+        
+        return sDuration;
+    }
+
 
     //-----------------------------------------------
     // setters and getters

@@ -14,7 +14,7 @@ public class Song
         duration = 0;
         genre = "";
     }
-    
+    // CHANGE THESE NAMES SO THEY MAKE SENSE WITH SONG COLLECTION
     public Song(String inputName, String inputArtist, int inputDuration, String inputGenre) {
         name = inputName;
         artist = inputArtist;
